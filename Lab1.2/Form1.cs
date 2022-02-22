@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,14 +7,21 @@ namespace Lab1._2
 {
     public partial class Form1 : Form
     {
-        private Ball ball = null;
+        private List<Ball> balls;
 
         public Form1()
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
             this.BackColor = Color.White;
-            ball = new Ball(this, 0, 50, 20, Color.Purple);
+
+            balls = new List<Ball>
+            {
+            new Ball(this, 0, 50, 20, Color.Purple),
+            new Ball(this, 0, 70, 30, Color.Red),
+            new Ball(this, 0, 80, 50, Color.Green),
+            new Ball(this, 0, 60, 35, Color.Aquamarine)
+            };
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,14 +34,22 @@ namespace Lab1._2
         {
             SolidBrush brush = new SolidBrush(Color.White);
             e.Graphics.FillRectangle(brush, 0, 0, Size.Width, Size.Height);
-            brush = new SolidBrush(ball.getColor());
-            e.Graphics.FillEllipse(brush, ball.getPX(), ball.getPY(), ball.getSize(), ball.getSize());
+
+            foreach (var ball in balls)
+            {
+                brush = new SolidBrush(ball.getColor());
+                e.Graphics.FillEllipse(brush, ball.getPX(), ball.getPY(), ball.getSize(), ball.getSize());
+            }
+
             brush.Dispose();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ball.terminateBallThread();
+            foreach (var ball in balls)
+            {
+                ball.terminateBallThread();
+            }
         }
     }
 }

@@ -11,6 +11,10 @@ namespace Lab1._2
         private Color color;
         private Form1 parent = null;
         private Thread bthread = null;
+        private int gravy = 1;
+        private int speed = -30;
+        private int speedy = -30;
+        private int speedx = 0;
 
         public Ball(Form1 parent, int px, int py, int size, Color color)
         {
@@ -51,11 +55,20 @@ namespace Lab1._2
         //incrementeaza pozitia bilei pe orizontala pana cand iese din fereastra
         public void run()
         {
-            while (px < parent.Size.Width)
+            while (true)
             {
+                speedy += gravy;
+                py += speedy;
+                px += speedx;
                 Thread.Sleep(20);
-                px++;
+                //px++;
                 parent.Refresh();
+                if (py > parent.Size.Height)
+                {
+                    speedy = speed;
+                    speed += 3;
+                }
+                if (speed == 0) break;
             }
         }
     }
