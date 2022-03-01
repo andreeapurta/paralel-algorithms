@@ -8,15 +8,19 @@ namespace Lab2._2
         private ManualResetEvent Full = new ManualResetEvent(false); //producer
         private ManualResetEvent Empty = new ManualResetEvent(false); //consumer
         private readonly Thread consumer;
+        private readonly Thread consumer2;
         private readonly Thread producer;
 
         public ProducerConsumer()
         {
             producer = new Thread(Produce);
             consumer = new Thread(Consume);
+            consumer2 = new Thread(Consume);
+
             Full.Set();
             producer.Start();
             consumer.Start();
+            consumer2.Start();
             Console.ReadLine();
         }
 
