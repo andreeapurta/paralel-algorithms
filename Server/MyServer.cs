@@ -12,7 +12,7 @@ namespace Server
         private StreamReader streamReader = null;
         private StreamWriter streamWriter = null;
 
-        public static List<ServerHandler> ListClients = new List<ServerHandler>();
+        public static List<ServerHandler> Clients = new List<ServerHandler>();
 
         public MyServer()
         {
@@ -22,7 +22,7 @@ namespace Server
 
         public static List<ServerHandler> GetClientList()
         {
-            return ListClients;
+            return Clients;
         }
 
         private void Run()
@@ -33,9 +33,14 @@ namespace Server
             {
                 TcpClient clientSocket = server.AcceptTcpClient();
 
-                ServerHandler currClient = new ServerHandler(clientSocket);
+                ServerHandler currentClient = new ServerHandler(clientSocket);
+                foreach (var client in Clients)
+                {
+                    client.SendMessage("#" + currentClient.ClientName);
+                    currentClient.SendMessage(client.ClientName);
+                }
 
-                ListClients.Add(currClient);
+                Clients.Add(currentClient);
             }
         }
     }

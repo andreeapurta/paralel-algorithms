@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Net.Sockets;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace Client
 {
@@ -13,10 +13,11 @@ namespace Client
         private StreamReader streamReader = null;
         private StreamWriter streamWriter = null;
         private MyForm formClient;
+        private ListBox ClientsListBox;
         private Thread GetMessage;
-        public String ClientName;
+        public string ClientName;
 
-        public MyClient(MyForm form, String nume)
+        public MyClient(MyForm form, String nume, ListBox clientsListBox)
         {
             client = new TcpClient("localhost", 8000);
             stream = client.GetStream();
@@ -25,6 +26,7 @@ namespace Client
             ClientName = nume;
             SendString(nume);
             formClient = form;
+            ClientsListBox = clientsListBox;
             GetMessage = new Thread(new ThreadStart(ReceiveMessage));
             GetMessage.Start();
 
@@ -42,18 +44,15 @@ namespace Client
         {
             while (true)
             {
-                String message = Convert.ToString(streamReader.ReadLine());
+                string message = Convert.ToString(streamReader.ReadLine());
+
                 if (message != null)
                 {
-                    if (message.Contains('&'))
+                    if (message.Contains("#"))
                     {
-                        string[] split = message.Split(' ');
-                        ClientName = split[1];
+                        ClientsListBox.Items.Add(message.Remove(0, 1));
                     }
-                    else
-                    {
-                        formClient.textBoxMesaje.Text += message + "\r\n";
-                    }
+                    else formClient.textBoxMesaje.Text += message + "\r\n";
                 }
             }
         }

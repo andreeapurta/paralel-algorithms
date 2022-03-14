@@ -24,7 +24,7 @@ namespace Client
         {
             Name = NameTxtBox.Text;
             ClientsListBox.Items.Add(Name);
-            client = new MyClient(this, Name);
+            client = new MyClient(this, Name, ClientsListBox);
         }
 
         private void SendBtn_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace Client
             {
                 if (selectedItem != "")
                 {
-                    client.SendString("@ " + selectedItem + " " + client.ClientName + " " + message);
+                    client.SendString("@ " + selectedItem + " " + message);
                     SendtxtBox.Text = String.Empty;
                 }
                 else
