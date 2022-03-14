@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32014.148
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab1.1", "Lab1.1\Lab1.1.csproj", "{4B0696BE-5053-41EA-8E6B-2CA0B0CB16ED}"
 EndProject
@@ -15,13 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab2.2", "Lab2.2\Lab2.2.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2.3-Lift", "Lab2.3-Lift\Lab2.3-Lift.csproj", "{198FB1A0-A3E9-4087-90F5-308A07AB43E9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab3-Server", "Lab3-Server\Lab3-Server.csproj", "{9E54F9BE-DFE7-4FD8-B0B9-9BE0BFB6FAE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentProj_EntityFramework", "StudentProj_EntityFramework\StudentProj_EntityFramework.csproj", "{0F504A4C-92E8-4DC5-97FF-9D605D0C39E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab3-Client", "Lab3-Client\Lab3-Client.csproj", "{D52D09F1-C290-409B-8705-4E783CD3F27F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentProj_EntityFramework", "StudentProj_EntityFramework\StudentProj_EntityFramework.csproj", "{0F504A4C-92E8-4DC5-97FF-9D605D0C39E3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagerView", "StudentManagerView\StudentManagerView.csproj", "{C222DE30-2247-47B4-848F-F6DB5C3E53E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentManagerView", "StudentManagerView\StudentManagerView.csproj", "{C222DE30-2247-47B4-848F-F6DB5C3E53E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,14 +49,6 @@ Global
 		{198FB1A0-A3E9-4087-90F5-308A07AB43E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{198FB1A0-A3E9-4087-90F5-308A07AB43E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{198FB1A0-A3E9-4087-90F5-308A07AB43E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E54F9BE-DFE7-4FD8-B0B9-9BE0BFB6FAE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E54F9BE-DFE7-4FD8-B0B9-9BE0BFB6FAE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E54F9BE-DFE7-4FD8-B0B9-9BE0BFB6FAE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E54F9BE-DFE7-4FD8-B0B9-9BE0BFB6FAE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D52D09F1-C290-409B-8705-4E783CD3F27F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D52D09F1-C290-409B-8705-4E783CD3F27F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D52D09F1-C290-409B-8705-4E783CD3F27F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D52D09F1-C290-409B-8705-4E783CD3F27F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0F504A4C-92E8-4DC5-97FF-9D605D0C39E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F504A4C-92E8-4DC5-97FF-9D605D0C39E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F504A4C-92E8-4DC5-97FF-9D605D0C39E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
