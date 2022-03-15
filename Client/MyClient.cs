@@ -52,7 +52,8 @@ namespace Client
                     {
                         ClientsListBox.Items.Add(message.Remove(0, 1));
                     }
-                    else formClient.textBoxMesaje.Text += message + "\r\n";
+                    else
+                    formClient.textBoxMesaje.Text += message + "\r\n";
                 }
             }
         }

@@ -36,8 +36,8 @@ namespace Server
                 ServerHandler currentClient = new ServerHandler(clientSocket);
                 foreach (var client in Clients)
                 {
-                    client.SendMessage("#" + currentClient.ClientName);
-                    currentClient.SendMessage(client.ClientName);
+                    client.SendMessage($"#{currentClient.ClientName}");
+                    currentClient.SendMessage($"#{client.ClientName}");
                 }
 
                 Clients.Add(currentClient);

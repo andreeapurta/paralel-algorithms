@@ -25,6 +25,7 @@ namespace Client
             Name = NameTxtBox.Text;
             ClientsListBox.Items.Add(Name);
             client = new MyClient(this, Name, ClientsListBox);
+            client.SendString("S-a conectat clientul " + Name);
         }
 
         private void SendBtn_Click(object sender, EventArgs e)
